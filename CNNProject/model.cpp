@@ -10,14 +10,23 @@
 #include <iostream>
 using namespace std;
 
-
-Rectangle::Rectangle (int a, int b) {
-    width = a;
-    height = b;
+Model::Model (double **a,int b) {
+    weightFilterSize =b;
+    array=new double*[weightFilterSize];
+    for(int i=0;i<b;i++)
+        array[i]=new double[b];
+    for(int i=0;i<b;i++)
+        for(int j=0;j<b;j++)
+            array[i][j]=a[i][j];
 }
-
-
-int Rectangle::area (){
-    return (width*height);
+void Model::printFilterMatrix (){
+    for(int i=0; i<weightFilterSize; i++)    //This loops on the rows.
+    {
+        for(int j=0; j<weightFilterSize; j++) //This loops on the columns
+        {
+            cout << array[i][j]  << "  ";
+        }
+        cout << endl;
+    }
     
 }

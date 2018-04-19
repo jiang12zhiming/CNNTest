@@ -8,12 +8,19 @@
 
 #ifndef model_hpp
 #define model_hpp
-
+#include<iostream>
+#include<fstream>
 #include <stdio.h>
-class Rectangle {
-    int width, height;
+
+class Model {
+private:
+    double **array;
+    int weightFilterSize;
+//    double  weightFilter;
+//    int weightFilterSize;
 public:
-    Rectangle (int,int);
-    int area ();
+    Model(int);
+    Model (double**, int);
+    void printFilterMatrix ();
 };
 #endif /* model_hpp */
