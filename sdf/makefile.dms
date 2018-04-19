@@ -1,8 +1,0 @@
-elements: elements.o elementOps.o
-	gcc -o elements elements.o elementOps.o
-
-elements.o: elements.c elementOps.h
-	gcc -c elements.c
-
-elementOps.o: elementOps.c elementOps.h
-	gcc -c elementOps.c
